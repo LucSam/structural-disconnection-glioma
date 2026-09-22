@@ -1,8 +1,14 @@
-# ICONS-GP: structural disconnection and language in glioma
+# Structural disconnection analysis in glioma patients
 
-Analysis code accompanying **Structural disconnection patterns relate to preoperative language subtest profiles in glioma**.
+Python analysis scripts for investigating structural disconnection, language and cognitive performance, and quality of life in patients with glioma.
+
+## The ICONS-GP project
+
+**ICONS-GP** is the project acronym for *Stratifizierung des neuroonkologischen und neurokognitiven Risikos bei Gliom-Patienten mithilfe von Connectomics auf Individualebene* — in English, *stratification of neuro-oncological and neurocognitive risk in glioma patients using individual-level connectomics*. The [official BMFTR project page](https://www.gesundheitsforschung-bmftr.de/de/icons-gp-stratifizierung-des-neuroonkologischen-und-neurokognitiven-risikos-bei-gliom-19047.php) describes the broader project and its aims.
 
 ## Study overview
+
+These scripts accompany the manuscript **Structural disconnection patterns relate to preoperative language subtest profiles in glioma**.
 
 This retrospective study examined how the anatomical distribution of estimated structural disconnection relates to language and cognitive performance before glioma surgery. The cohort comprised 163 patients. Lesion masks and normative tractography, processed with the Network Modification (NeMo) toolbox, provided disconnection estimates for 191 brain parcels and their connections. Language and cognition were assessed with the Aachen Aphasia Test (AAT) and DemTect.
 
@@ -10,7 +16,7 @@ The main analyses characterise regional disconnection, connections associated wi
 
 ## What this repository contains
 
-- The 17 final Python scripts, including shared helpers.
+- Python analysis scripts and shared helpers.
 - Pinned Python dependencies and the reference software versions.
 - Table captions, figure provenance and reference output checksums.
 - Tests for the interpretation and loading of NeMo connectivity matrices.
@@ -19,7 +25,7 @@ The main analyses characterise regional disconnection, connections associated wi
 
 The workflow starts after lesion segmentation, spatial normalisation and NeMo processing. These upstream steps are outside this repository.
 
-## Analysis map
+## Script overview
 
 The scripts follow the study from cohort preparation to statistical analyses and manuscript outputs. Generated numerical results go to `results/analysis/`; tables and figures go to `outputs/`.
 
@@ -50,7 +56,7 @@ Shared helpers handle data loading and outcome definitions ([`_shared.py`](scrip
 
 ## Getting started
 
-1. Read the analysis map above.
+1. Read the script overview above.
 2. Follow [Running the code](docs/RUNNING.md) to set up Python and run the synthetic tests.
 3. With the study inputs available, follow the same guide to reproduce the full workflow or refresh existing exports.
 
