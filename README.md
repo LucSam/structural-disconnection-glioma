@@ -4,7 +4,7 @@ Python analysis scripts for investigating structural disconnection, language and
 
 ## The ICONS-GP project
 
-**ICONS-GP** is the project acronym for *Stratifizierung des neuroonkologischen und neurokognitiven Risikos bei Gliom-Patienten mithilfe von Connectomics auf Individualebene* — in English, *stratification of neuro-oncological and neurocognitive risk in glioma patients using individual-level connectomics*. The [official BMFTR project page](https://www.gesundheitsforschung-bmftr.de/de/icons-gp-stratifizierung-des-neuroonkologischen-und-neurokognitiven-risikos-bei-gliom-19047.php) describes the broader project and its aims.
+**ICONS-GP** stands for *Individual-level COnnectomics for Neuro-oncological advanced Stratification in Glioma Patients*. The [official BMFTR project page](https://www.gesundheitsforschung-bmftr.de/de/icons-gp-stratifizierung-des-neuroonkologischen-und-neurokognitiven-risikos-bei-gliom-19047.php) describes the broader project and its aims.
 
 ## Study overview
 
