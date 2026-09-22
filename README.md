@@ -70,3 +70,11 @@ Shared helpers handle data loading and outcome definitions ([`_shared.py`](scrip
 3. With the study inputs available, follow the same guide to reproduce the full workflow or refresh existing exports.
 
 The reference environment uses **Python 3.12.4** and **MRtrix3 `connectomestats 3.0.4-153-g4040c17b`**. Exact versions are recorded in [`metadata/software_versions.json`](metadata/software_versions.json). The code retains study-specific filenames, sample-count checks and verification targets; applying it to a different cohort requires adapting those assumptions.
+
+## License
+
+The analysis code and accompanying documentation in this repository are available under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Lucius S. Fekonja.
+
+This license does not apply to the accompanying manuscript or study data. Third-party dependencies retain their own licenses.
