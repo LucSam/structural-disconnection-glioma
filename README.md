@@ -25,6 +25,22 @@ The main analyses characterise regional disconnection, connections associated wi
 
 The workflow starts after lesion segmentation, spatial normalisation and NeMo processing. These upstream steps are outside this repository.
 
+## Questions addressed by the analyses
+
+The following questions organise the workflow. Regional change in connectivity (ChaCo) estimates disconnection of a brain region; pairwise ChaCoConn estimates disconnection between two regions. Graph measures describe the organisation of estimated remaining connectivity, including the role of individual regions within that network. These structural measures are estimates based on the preoperative lesion and normative tractography. The edge analysis uses threshold-free network-based statistics (TFNBS), with error control across connections.
+
+| Analysis | Question |
+| --- | --- |
+| Regional | Is estimated disconnection of a particular brain region related to global or subtest performance? |
+| Edge-level | Which connections show greater estimated disconnection in patients with lower subtest scores? |
+| Whole network | Is the organisation of estimated remaining connectivity related to performance groups or continuous scores? |
+| Nodal | Is the network role of an individual region related to test performance? |
+| Multivariate | Is the spatial pattern of disconnection associated with subtest scores considered together, after accounting for mean disconnection? |
+| Prediction | Does regional disconnection improve predictions for patients whose data were not used to fit the model? |
+| Quality of life | How are test performance and disconnection related to patient-reported functioning? |
+
+In the multivariate models, mean disconnection refers to the left hemisphere for AAT and the whole brain for DemTect. Prediction and quality-of-life analyses are secondary and exploratory. Clinical covariates, correction families and validation procedures differ by analysis; they are specified in the corresponding scripts and manuscript Methods.
+
 ## Script overview
 
 The scripts follow the study from cohort preparation to statistical analyses and manuscript outputs. Generated numerical results go to `results/analysis/`; tables and figures go to `outputs/`.
@@ -46,13 +62,6 @@ The scripts follow the study from cohort preparation to statistical analyses and
 | [12_refresh_manuscript_exports.py](scripts/12_refresh_manuscript_exports.py) | Refresh selected tables, figures, labels and the joint QoL correction from saved results without refitting models. |
 
 Shared helpers handle data loading and outcome definitions ([`_shared.py`](scripts/_shared.py)), regional figure layouts ([`_regional_figure_style.py`](scripts/_regional_figure_style.py)) and Table 2 export ([`_table_exports.py`](scripts/_table_exports.py)). [`update_release_checksums.py`](scripts/update_release_checksums.py) records reference checksums after an intentional, reviewed output update.
-
-## Reading the analyses
-
-- **ChaCo:** NeMo's change-in-connectivity estimate, summarised for individual brain regions. **ChaCoConn** describes disconnection between pairs of regions.
-- **TFNBS:** threshold-free network-based statistics, used here to identify connections associated with subtest performance while correcting across edges.
-- **Graph descriptors:** measures of the organisation of NeMo-predicted remaining connectivity. These matrices represent estimates derived from normative tractography, not measured postoperative connectivity.
-- **Multivariate analysis:** tests several subtest scores jointly. This addresses the relationship between disconnection patterns and performance profiles. The separate prediction analysis asks whether regional information improves estimates for held-out patients.
 
 ## Getting started
 
