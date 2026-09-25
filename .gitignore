@@ -1,18 +1,17 @@
-# Track only source, documentation and the four reviewed metadata files.
-# Local study data, results, figures, caches and environment files stay ignored.
+# Allow only reviewed source, documentation and public release metadata.
+# Study data, generated results, manuscripts, caches and local metadata stay ignored.
 *
 !/.gitignore
 !/README.md
+!/CHANGELOG.md
 !/LICENSE
 !/requirements.txt
 !/scripts/
 !/scripts/*.py
 !/tests/
-!/tests/test_nemo_graph_loading.py
+!/tests/*.py
 !/docs/
 !/docs/*.md
 !/metadata/
 !/metadata/software_versions.json
-!/metadata/table_export_metadata.json
-!/metadata/figure_generation_provenance.csv
-!/metadata/output_checksums_sha256.csv
+!/metadata/code_snapshot.json

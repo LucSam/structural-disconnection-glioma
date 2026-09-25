@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "previous_version": "1.0.0",
+  "source": "Current focused manuscript analysis workflow",
+  "script_changes_for_publication": "None; scripts and tests copied byte-for-byte from the reviewed working package.",
+  "files": {
+    "scripts/00_run_all.py": "0a003b1dd725e3e78520ecd7d84f0ed3ed4e3900caad5aedd1d4defbad616958",
+    "scripts/01_prepare_inputs.py": "b4fc30d47df13f9beed9ecc960d9dcca5c8cf56dc5cbe23282eb146be8b86e2f",
+    "scripts/02_compute_staged_models.py": "85314c9a9e54645827839d5e77fb438cdea3d1fd593a4edd410456480cd1c86d",
+    "scripts/03_compute_clinical_qol.py": "a1fc08561d787d0ae2d6d8cbfe7ca6bcbb3b8796719240baf9d2e6ab99e9211d",
+    "scripts/04_compute_profile_checks.py": "63d7aac3f9651bda2f92a20a10f86086949257edc091ae25e45b5e0f6c49115c",
+    "scripts/05_prepare_anatomy.py": "b213588e6464ff76579c8860127aa19b1cd3bab5fa2daa883ca61e7e2752ccff",
+    "scripts/05b_prepare_displays.py": "8b48ef87d2afd5444a550fd9a2a0115c98bde61a35f502ed453211745a14835d",
+    "scripts/05c_audit_hemisphere_support.py": "b94b23f4489b02b77739f9a21de264a842f3d7f6fb2c96349a0f78f5e5550b8f",
+    "scripts/05d_compute_hemisphere_tfnbs.py": "7eed57c16811c6955153fc699a52d836a66ca1498fe7c015e958cef722a4b473",
+    "scripts/05e_prepare_group_anatomy.py": "73215ab8b9115a64b5b2ec52a5932bd5d916a615b5a3c042e28d9fe4b6cd73e0",
+    "scripts/05f_prepare_regional_displays.py": "c3ea663e96b1ae07e2e934658761b91291c8bb35fbba29f09ea645ad5041965f",
+    "scripts/05g_prepare_network_context.py": "8429b9cccffa4b21b2700079f6e50c6c09461325094cc4a7058a6063e126adf9",
+    "scripts/05h_describe_battery_overlap.py": "c3dd53a99b5fe094e3f1dff459b025e8a8182c2ec5399a4dc2303acbda667219",
+    "scripts/06_create_figures.py": "381763a8d374fafb2c4558b11d3b77ed2cdf6c72fcaafe505553cc2cc3e73a5d",
+    "scripts/07_build_manuscript.py": "e8351f28c730e9d8e1380cd1d780ff6a816cc298b61cabf462906bd0a5575fed",
+    "scripts/08_validate_package.py": "b95d8f5ae71f4f430c0c4441e8f62e5b09a95e54879a2629a7bb4842f8e2650c",
+    "scripts/09_create_circle_alternative.py": "ca987c4dd1c597c63c7a6ced3609a0bae790ab8f368c36652eaf8a2f9d614ac2",
+    "scripts/_anatomical_figures.py": "2bb3e455944b351cfd00c501433965483b84535fbe493131a02925ee81ce5c84",
+    "scripts/_cohort_figure.py": "16b8a7129994237b2a5d4f8fe96fe67e7263914afaa59be0eef604e2da999bc1",
+    "scripts/_common.py": "5c823a29af5ed71e3e9a03a77da8fabac0ac0d5723cf60acbcab28fabb4d5b19",
+    "scripts/_network_context_figures.py": "403955af723d958cd6e6252f84522359867b5f8effd6bd954f1ae12ea9719507",
+    "scripts/_reader_figures.py": "9d03fe8bec5e6794234689b310380c9e886e89c9f074756d50ff363b5edb82b5",
+    "tests/test_profile_contrasts.py": "467cc755590c99c4cf2c78434b2b313219f50de92e279d66787b585034311549"
+  }
+}
