@@ -10,6 +10,8 @@ AAT and DemTect are modelled separately. Each model considers all principal subt
 2. Add disconnection burden (mean regional ChaCo).
 3. Add the disconnection pattern, represented by eight principal components of the 191 regional values.
 
+For AAT, burden averages 82 left cerebral and ten left cerebellar parcels; for DemTect, it averages all 191 parcels. Both batteries use all 191 regional values to represent the disconnection pattern.
+
 The same patients enter each step within a battery. Scores are inverse-normal rank transformed. PCA is fitted to the standardised regional values without using test scores. The first eight components explain 81.8% of regional ChaCo variation, not performance variation. Anatomical-group means provide an alternative representation of the pattern. Profile contrasts separately examine whether associations differ between subtests.
 
 ## Roles and correction families

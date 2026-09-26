@@ -1,54 +1,51 @@
 # Structural disconnection analysis in glioma patients
 
-Python analysis scripts examining why preoperative language and cognitive performance vary among patients with glioma, including those without test-defined deficits despite extensive estimated disconnection. The analyses relate structural disconnection to performance and patient-reported function.
+Python analysis scripts for investigating structural disconnection, preoperative language and cognitive performance, and patient-reported quality of life in glioma.
 
-**Current version: [v2.0.0](https://github.com/LucSam/structural-disconnection-glioma/releases/tag/v2.0.0).** The earlier workflow is preserved as [v1.0.0](https://github.com/LucSam/structural-disconnection-glioma/tree/v1.0.0). See the [changelog](CHANGELOG.md) for the differences.
+## Study overview
 
-## Study and project
+Patients with glioma differ in their language and cognitive performance. Some retain measured function despite extensive tumour-related disconnection. This retrospective study of 163 patients examines how these differences relate to the amount and anatomical pattern of estimated disconnection, and how they are reflected in patient-reported function.
+
+The Network Modification Tool (NeMo) combines tumour masks with tractography from healthy reference brains to estimate affected connections. Regional ChaCo describes disconnection of each of 191 anatomical parcels; ChaCoConn describes disconnection between parcel pairs. Language was assessed with the Aachen Aphasia Test (AAT), cognition with DemTect, and patient-reported function with the EORTC QLQ-C30 and QLQ-BN20.
 
 The scripts accompany the manuscript *Structural disconnection burden and pattern in glioma: preoperative performance and patient-reported function*.
 
-The retrospective cohort comprised 163 patients. The Network Modification Tool (NeMo) used tumour masks and healthy reference tractography to estimate affected connections. Regional ChaCo describes disconnection of each of 191 anatomical parcels; ChaCoConn describes disconnection between parcel pairs. These estimates describe potential lesion effects in reference brains, rather than measuring each patient's own connectivity or adaptation.
+## Analysis approach
 
-Language was assessed with the Aachen Aphasia Test (AAT), cognition with DemTect, and patient-reported function with the EORTC QLQ-C30 and QLQ-BN20. Anatomical descriptions use the structural fs191 parcellation, grouped by anatomy and hemisphere.
+We first describe where disconnection occurs and how patients with and without test-defined deficits differ, including those with high disconnection burden. Here, **burden** means mean regional ChaCo, while **pattern** describes how disconnection varies across regions.
 
-**ICONS-GP** stands for *Individual-level COnnectomics for Neuro-oncological Stratification in Glioma Patients*. The [official project page](https://www.gesundheitsforschung-bmftr.de/de/icons-gp-stratifizierung-des-neuroonkologischen-und-neurokognitiven-risikos-bei-gliom-19047.php) describes the broader project.
+The central analysis asks whether burden is associated with performance beyond clinical factors, and whether the pattern adds information beyond burden. It considers the AAT or DemTect subtests together, separately for each battery. Regional maps and connection-level analyses then locate associations with lower performance. Quality-of-life analyses relate both performance and disconnection to the patient's reported experience.
 
-## Analysis in brief
+The analyses are exploratory. NeMo estimates lesion effects in reference brains; it does not directly measure individual adaptation or resilience. The [methods overview](docs/METHODS.md) explains adjustment, sensitivity analyses and correction families.
 
-Two terms organise the analysis:
+## What this repository contains
 
-- **Disconnection burden:** mean regional ChaCo, describing how much connectivity is affected. AAT uses 82 left cerebral and ten left cerebellar parcels; DemTect uses all 191 parcels.
-- **Disconnection pattern:** how ChaCo varies across regions, describing where disconnection occurs. Both batteries use all 191 regional values, summarised by eight principal components in the central model.
+- Analysis scripts and shared numerical methods.
+- Figure generators and editable table/document exporters.
+- Synthetic statistical tests, dependencies and source checksums.
 
-| Step | Question | Approach |
-| --- | --- | --- |
-| Cohort and coverage | Where are lesions and estimated disconnections, and how do patients perform? | Lesion overlap, regional and connection means, score distributions. |
-| With and without deficits | How do patients differ at high disconnection burden? | Descriptive regional and connection comparisons within the highest burden third; groups remain unmatched and unadjusted. |
-| Burden and pattern | Is burden associated with performance beyond clinical factors, and does the pattern add information beyond burden? | All four AAT or five DemTect subtests considered together, separately for each battery; anatomical-group sensitivity analyses. |
-| Anatomical localisation | Which regions and connections are associated with lower performance? | Regional partial correlations and threshold-free network-based statistics (TFNBS), adjusted for clinical factors and hemisphere; additional lobe adjustment as sensitivity. |
-| Patient-reported function | How do performance and disconnection relate to everyday functioning? | Neuropsychological–QoL correlations and descriptive structural–QoL summaries. |
+**Patient data, lesion masks, individual NeMo outputs, generated results and manuscript files are not included.** Reproducing the study requires the separately held inputs; the document builder also requires private manuscript templates.
 
-Clinical factors are age, WHO grade and tumour volume. The central models also include hemisphere. Profile checks assess whether pattern associations differ between subtests. The analyses were developed iteratively and remain exploratory; preserved test performance does not establish network resilience. [Methods overview](docs/METHODS.md) summarises adjustment and correction families.
+## Getting started
 
-## Code and reproduction
-
-This is a **code release**. It includes analysis and figure scripts, table/document exporters, synthetic statistical tests, dependencies and a source checksum manifest. The scripts and tests match the reviewed working package byte for byte. Patient data, lesion masks, NeMo outputs, generated results, private provenance and manuscript text/documents are not distributed.
-
-A fresh clone supports code inspection and the synthetic tests:
+A fresh clone supports code inspection and tests with synthetic data:
 
 ```bash
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-Reproducing the study requires the separately held inputs. The full runner also builds the manuscript and therefore requires the private manuscript templates. It cannot reproduce study results from this public repository alone. See [Running the code](docs/RUNNING.md) for inputs, commands and the script map.
+See [Running the code](docs/RUNNING.md) for setup, required inputs, the script map and reproduction commands. The reference environment uses Python 3.12.4 and MRtrix3 `connectomestats 3.0.4-153-g4040c17b`; exact [software versions](metadata/software_versions.json) and [source checksums](metadata/code_snapshot.json) are recorded.
 
-The reference environment is Python 3.12.4 and MRtrix3 `connectomestats 3.0.4-153-g4040c17b`. [Software versions](metadata/software_versions.json) and [source checksums](metadata/code_snapshot.json) identify this release. Figures are exported as PNG.
+## The ICONS-GP project
 
-## Versions and licence
+**ICONS-GP** stands for *Individual-level COnnectomics for Neuro-oncological Stratification in Glioma Patients*. The [official project page](https://www.gesundheitsforschung-bmftr.de/de/icons-gp-stratifizierung-des-neuroonkologischen-und-neurokognitiven-risikos-bei-gliom-19047.php) describes the broader project and its aims.
 
-Version 2 replaces the earlier command sequence and input/output layout. Prediction and graph-topology screens belong to the archived version 1 workflow; they are not stages of the focused version 2 analysis. Version numbers identify code snapshots, not independent validation of a manuscript.
+## Versions
+
+The current code release is [v2.0.0](https://github.com/LucSam/structural-disconnection-glioma/releases/tag/v2.0.0). The earlier, broader workflow—including prediction and graph-topology analyses—is preserved as [v1.0.0](https://github.com/LucSam/structural-disconnection-glioma/tree/v1.0.0). See the [changelog](CHANGELOG.md) for the changes in scope and workflow.
+
+## Licence
 
 The analysis code and accompanying documentation are available under the [MIT License](LICENSE).
 
